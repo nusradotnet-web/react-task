@@ -27,7 +27,7 @@ pipeline {
         // Add --passWithNoTests flag
         bat 'set CI=true && npm test -- --watchAll=false --passWithNoTests'
     }
-}
+
 }
 
         stage('Validation') {
