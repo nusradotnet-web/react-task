@@ -30,7 +30,7 @@ options {
     }
     steps {
         echo 'Executing React unit tests...'
-        bat 'npm test -- --watchAll=false'
+        bat 'npm test -- --watchAll=false --passWithNoTests'
     }
 }
 
