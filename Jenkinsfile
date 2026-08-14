@@ -16,7 +16,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Installing dependencies and building React application...'
-                bat 'npm ci'
+                bat 'npm ci --prefer-offline'
                 bat 'npm run build'
             }
         }
