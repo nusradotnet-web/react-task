@@ -27,7 +27,7 @@ options {
     stage('Test') {
     steps {
         echo 'Executing React unit tests...'
-        bat 'set CI=true&& npm test -- src/App.test.js --watchAll=false'
+       bat 'set CI=true && npm test -- --watchAll=false'
     }
 }
 
