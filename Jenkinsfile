@@ -24,10 +24,13 @@ options {
             }
         }
 
-    stage('Test') {
+   stage('Test') {
+    environment {
+        CI = 'true'
+    }
     steps {
         echo 'Executing React unit tests...'
-       bat 'set CI=true && npm test -- --watchAll=false'
+        bat 'npm test -- --watchAll=false'
     }
 }
 
