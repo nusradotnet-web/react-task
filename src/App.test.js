@@ -2,5 +2,5 @@ import { render, screen } from "@testing-library/react";
 import App from "./App";
 
 test("renders learn react link", () => {
-  expect(1 + 1).toBe(2);
+  expect(2 + 2).toBe(4);
 });
