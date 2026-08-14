@@ -4,12 +4,15 @@ pipeline {
     tools {
         nodejs 'NodeJS' // Matches the name in Jenkins Global Tool Configuration
     }
-
+options {
+        skipDefaultCheckout() // Skip standard checkout to do a clean one
+    }
     stages {
         stage('Checkout') {
             steps {
-                echo 'Checking out source code from GitHub...'
-                // Jenkins automatically handles git checkout when configured via SCM
+                echo 'Cleaning workspace and fetching fresh source code...'
+                cleanWs() // Cleans the workspace directory completely
+                checkout scm
             }
         }
 
