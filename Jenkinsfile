@@ -22,12 +22,12 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                echo 'Executing React unit tests...'
-                // Setting CI=true prevents Jest from hanging in watch mode
-                bat 'set CI=true&& npm test -- --passWithNoTests'
-            }
-        }
+    steps {
+        echo 'Executing React unit tests...'
+        // set CI=true without trailing spaces ensures Jest runs non-interactively
+        bat 'set CI=true&& npm test -- --watchAll=false'
+    }
+}
 
         stage('Validation') {
             steps {
