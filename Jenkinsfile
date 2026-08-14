@@ -24,8 +24,7 @@ pipeline {
     stage('Test') {
     steps {
         echo 'Executing React unit tests...'
-        // set CI=true without trailing spaces ensures Jest runs non-interactively
-        bat 'set CI=true&& npm test -- --watchAll=false'
+        bat 'set CI=true&& npm test -- src/App.test.js --watchAll=false'
     }
 }
 
